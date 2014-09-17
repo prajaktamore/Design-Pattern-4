@@ -1,0 +1,192 @@
+CS542 Design Patterns
+Fall 2013
+PROJECT <4> README FILE
+
+Due Date: <Sunday 11, November, 2013>
+Submission Date: <Sunday 11, November, 2013>
+Grace Period Used This Project: <0> Days
+Grace Period Remaining: <0> Days
+Author(s): <Prajakta More>
+e-mail(s): <pmore2@binghamton.edu>
+
+
+PURPOSE:
+[
+1)	Read command line arguments input file name, value to be updated and Debug value. 
+2)	Use BSTBuilder to build the BST, BST Backup1 and BST backup 2 three trees. 
+3)	Calling inorder traversal to print the values from the BST, BST Backup1 and BST backup 2 three trees . 
+4)	Calling the visitor to print the sum of all the B-Numbers individually of all BST, BST Backup1 and BST backup 2 three trees. 
+5)	Calling the visitor to update all nodes with UPDATE_VALUE which will upadte each node in tree by adding UPDATE_VALUE and simultaneously updating BST Backup1 and BST backup 2 two trees. 
+6)	Calling inorder traversal to print the values from the BST, BST Backup1 and BST backup 2 three trees .
+7)	Calling the visitor to print the sum of all the B-Numbers individually of all BST, BST Backup1 and BST backup 2 three trees.
+
+]
+
+PERCENT COMPLETE:
+[
+  I believe we have completed the project 100%, I have implemented entire functionality.
+  According to the specific required two design patterns are applied 
+  1. Visitor Pattern (add the values of all the nodes & update each node of the BST by adding the integer UPDATE_VALUE to the B-Number)
+  2. Observer Pattern (Each node in backup-1 and backup-2 should be updated using the observer pattern whenever a node in the original BST is changed by using Java's built-in observer pattern. )
+]
+
+PARTS THAT ARE NOT COMPLETE:
+[
+  None.
+]
+
+BUGS:
+[
+	Known bugs N/A  
+]
+
+FILES:
+[
+
+  Included with this project are 16 files:
+  	Driver.java 			Driver class that calls in steps BSTBuilder and its associated methods
+  	BST.java BST class that is Binary Search Tree
+  	Node.java Node class that is Node of tree
+  	BSTElement.java BSTElement is interface for BSTElement that accepts the visitors in visitor pattern
+  	BSTVisitor.java  BSTVisitor is interface that creates visitor for add and update visitors
+  	IBST.java IBST interface for BST class
+  	IBSTBuilder.java IBSTBuilder is interface that BSTBuilder
+  	ICheckUserInput.java Interface that checks the input validity
+  	BSTBuilder.java BSTBuilder class is Binary Search Tree Builder that calls all methods of BST class
+  	CatchWrongInputException.java User Defined exception class, That validates input data
+	CheckUserInput.java Checks the input validity
+	Debug.java 	Debugger class that maintains logging information
+	FileReaderClass.java FileReaderClass tis contains objects of FileReader and BufferedReader
+	build.xml Code for ANT compilation and for setting command line arguments.
+  	README	The text file that you are currently reading.
+    MyAllTypes.txt Input file
+]
+
+SAMPLE OUTPUT:
+
+[
+	run:
+     [java] 3
+     [java]   Inserted 3 to left of 11
+     [java]   Inserted 3 to left of 11
+     [java]   Inserted 3 to left of 114
+     [java]   Inserted 4 to right of 3
+     [java]   Inserted 4 to right of 3
+     [java]   Inserted 4 to right of 35
+     [java]   Inserted 5 to right of 4
+     [java]   Inserted 5 to right of 4
+     [java]   Inserted 5 to right of 46
+     [java]   Inserted 6 to right of 5
+     [java]   Inserted 6 to right of 5
+     [java]   Inserted 6 to right of 51
+     [java]   Inserted 1 to left of 3
+     [java]   Inserted 1 to left of 3
+     [java]   Inserted 1 to left of 32
+     [java]   Inserted 2 to right of 1
+     [java]   Inserted 2 to right of 1
+     [java]   Inserted 2 to right of 110
+     [java]   Inserted 10 to right of 6
+     [java]   Inserted 10 to right of 6
+     [java]   Inserted 10 to right of 623
+     [java]   Inserted 23 to right of 11
+     [java]   Inserted 23 to right of 11
+     [java]   Inserted 23 to right of 1145
+     [java]   Inserted 45 to right of 23
+     [java]   Inserted 45 to right of 23
+     [java]   Inserted 45 to right of 2334
+     [java]   Inserted 34 to left of 45
+     [java]   Inserted 34 to left of 45
+     [java]   Inserted 34 to left of 452390
+     [java]   Inserted 90 to right of 45
+     [java]   Inserted 90 to right of 45
+     [java]   Inserted 90 to right of 45
+
+     [java]  Root BST 1 2 3 4 5 6 10 11 23 34 45 90
+
+     [java]  BST BackUp One 1 2 3 4 5 6 10 11 23 34 45 90
+
+     [java]  BST BackUp Two 1 2 3 4 5 6 10 11 23 34 45 90
+
+     [java]  Root BST Total ::  234
+
+     [java]  BST BackUp One Total ::  234
+
+     [java]  BST BackUp Two Total ::  234
+
+     [java]  Root BST 6 7 8 9 10 11 15 16 28 39 50 95
+
+     [java]  BST BackUp One 6 7 8 9 10 11 15 16 28 39 50 95
+
+     [java]  BST BackUp Two 6 7 8 9 10 11 15 16 28 39 50 95
+
+     [java]  Root BST Total ::  294
+
+     [java]  BST BackUp One Total ::  294
+
+     [java]  BST BackUp Two Total ::  294
+
+]
+
+TO COMPILE:
+
+[
+  Extract the project and go to the directory(using CD Command) where you have extracted the project.
+  
+  Please Compile as: ant compile
+  
+]
+
+TO RUN:
+[
+  Please run as: ant -Darg0=MyAllTypes.txt -Darg1=5 -Darg2=1 run
+  Change -Drg2 according to Debug Value
+  0 : No output is printed
+  1 : Priting complete ouptput
+  2 : Constrcutor is called
+]
+
+EXTRA CREDIT:
+
+[
+
+Visitor Pattern (add the values of all the nodes & update each node of the BST by adding the integer UPDATE_VALUE to the B-Number)
+
+Observer Pattern (Each node in backup-1 and backup-2 should be updated using the observer pattern whenever a node in the original BST is changed by using Java's built-in observer pattern. )
+
+Debug is implemented properly
+
+BST, BST Backup1 and BST backup 2 three trees is created correct
+
+BST, BST Backup1 and BST backup 2 three trees is updated corrent when UPDATE_VALUE is called.
+ 
+BST, BST Backup1 and BST backup 2 three trees addition of all nodes is printed correctly . 
+
+Used System.exit(0) for every catch block
+
+Overriden toString() in every class 
+
+NULL checks are done whenever required
+
+Program to Interface and not to concrete class
+
+Input validation with user defined Exception handling
+
+]
+
+
+
+
+BIBLIOGRAPHY:
+
+This serves as evidence that we are in no way intending Academic Dishonesty.
+
+<Prajakta More>
+[
+	Complete code is written by me
+]
+
+ACKNOWLEDGEMENT:
+[
+	javaworld.com
+	http://stackoverflow.com
+]
